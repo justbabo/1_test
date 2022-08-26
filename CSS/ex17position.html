@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            border: 1px solid black;
+        }
+
+        .position{
+            width: 100px;
+            height: 100px;
+        }
+
+        #static{
+            background-color: aqua;
+
+            /* static => 위치속성이 비활성화 : 기본값 */
+            /* position: static */
+            top:10px;
+            left: 10px;
+
+        }
+        #relative{
+            background-color:blue;
+
+            /* relative => 위치속성이 활성화됨
+               기준점 : 본인이 원래 있었던 위치 */
+            position: relative;
+            top:10px;
+            left: 10px;
+
+        }
+
+
+        #parent{
+            position: relative;
+        }
+        
+            /* absolut 위치속성이 활성화됨
+                기준점 : static이 아닌 부모위치(로 올라감), 부모가 없다면 body 태그를 기준으로 */
+        #absolut{
+            background-color:blueviolet;
+
+            position: absolute;
+            top:10px;
+            left: 10px;
+
+        }
+
+        #fixed{
+            background-color:brown;
+
+            /* fixed => 위치속성이 활성화
+               기준점 : body태그, 스크롤 무시            */
+
+            position: fixed;
+            top: 0px;
+            left: 0px;
+
+
+        }
+    </style>
+</head>
+<body>
+    여기는 body 태그 입니다 여기는 body 태그 입니다 여기는 body 태그 입니다
+    <div id="parent">
+        여기는 parent태그 입니다 여기는 parent태그 입니다 여기는 parent태그 입니다
+        <div class="position" id="static">static</div>
+        <div class="position" id="relative">reative</div>
+        <div class="position" id="absolut">absolut</div>
+
+        
+
+        
+        <div class="position" id="fixed">fixed</div>
+    </div>
+</body>
+</html>
